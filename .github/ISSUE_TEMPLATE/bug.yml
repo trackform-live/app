@@ -1,0 +1,68 @@
+name: 问题反馈
+description: App 出现错误、闪退、无法播放等问题
+title: "[问题] "
+labels: [bug]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        感谢反馈！请**不要**填写手机号、身份证号、账号密码、课程激活码等个人信息，截图前请遮挡这些内容。
+  - type: input
+    id: version
+    attributes:
+      label: App 版本
+      description: 「我的 → 关于」中可以看到，例如 1.0.0
+      placeholder: "1.0.0"
+    validations:
+      required: true
+  - type: input
+    id: device
+    attributes:
+      label: 手机型号与系统版本
+      placeholder: 例如 小米 14 / Android 15、iPhone 15 / iOS 18
+    validations:
+      required: true
+  - type: dropdown
+    id: role
+    attributes:
+      label: 使用身份
+      options:
+        - 学员
+        - 讲师
+        - 教务 / 管理员
+    validations:
+      required: true
+  - type: dropdown
+    id: area
+    attributes:
+      label: 问题所在功能
+      options:
+        - 安装 / 更新
+        - 登录 / 实名 / 人脸核验
+        - 直播观看
+        - 回放
+        - 互动评论
+        - 课程资料
+        - 其它
+    validations:
+      required: true
+  - type: textarea
+    id: what
+    attributes:
+      label: 问题描述
+      description: 发生了什么？你期望的结果是什么？
+    validations:
+      required: true
+  - type: textarea
+    id: steps
+    attributes:
+      label: 复现步骤
+      placeholder: |
+        1. 打开某课程
+        2. 点击「进入直播」
+        3. 画面一直加载
+  - type: textarea
+    id: extra
+    attributes:
+      label: 截图 / 其它信息
+      description: 可直接粘贴截图或录屏（直播、回放画面受保护时无法截图，可用文字描述）。
